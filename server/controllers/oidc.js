@@ -53,6 +53,7 @@ const oidcSignInCallback = async (ctx) => {
     let userInfoEndpointParameters = `?access_token=${response.data.access_token}`;
 
     if (config["OIDC_USER_INFO_ENDPOINT_WITH_AUTH_HEADER"]) {
+      console.log('access_token', response.data.access_token);
       userInfoEndpointHeaders = {
         headers: { Authorization: `Bearer ${response.data.access_token}` },
       };
